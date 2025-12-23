@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand | E-commerce Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>Welcome to our store! Free shipping on orders over $100</div>
+            <div>
+                <select class="language-selector">
+                    <option>English</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">B</span>
+                        <span class="logo-text">rand<span class="logo-dot">.</span></span>
+                    </a>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search for products, brands, and categories...">
+                        <button id="searchBtn" class="search-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <div class="action-item">
+                            <i class="fas fa-user"></i>
+                            <span class="action-text">Account</span>
+                        </div>
+                        <div class="action-item" onclick="window.location.href='cart.html'">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cartCount" class="cart-count">3</span>
+                            </div>
+                            <span class="action-text">Cart</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav id="mainNav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" data-category="mobile">Mobile accessory</a>
+                            <a href="#" data-category="electronics">Electronics</a>
+                            <a href="#" data-category="smartphones">Smartphones</a>
+                            <a href="#" data-category="tech">Modern tech</a>
+                            <a href="#" class="see-all">See all categories</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link">Hot offers</a></li>
+                    <li><a href="#" class="nav-link">Gift boxes</a></li>
+                    <li><a href="#" class="nav-link">Projects</a></li>
+                    <li><a href="#" class="nav-link">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-robot"></i> AI Category</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>AI Category</span>
+            </div>
+        </div>
+        
+        <!-- Filter & Product Section -->
+        <div class="content-wrapper">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <!-- Category Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-list"></i> Category</h3>
+                        <button class="filter-clear">Clear</button>
+                    </div>
+                    <ul class="filter-options" id="categoryFilter">
+                        <li><a href="#" class="filter-option active" data-filter="all">All Categories</a></li>
+                        <li><a href="#" class="filter-option" data-filter="mobile">Mobile accessory</a></li>
+                        <li><a href="#" class="filter-option" data-filter="electronics">Electronics</a></li>
+                        <li><a href="#" class="filter-option" data-filter="smartphones">Smartphones</a></li>
+                        <li><a href="#" class="filter-option" data-filter="tech">Modern tech</a></li>
+                        <li><a href="#" class="filter-option" data-filter="fashion">Fashion</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Brand Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-tag"></i> Brands</h3>
+                        <button class="filter-clear">Clear</button>
+                    </div>
+                    <ul class="filter-options" id="brandFilter">
+                        <li><a href="#" class="filter-option active" data-brand="all">All Brands</a></li>
+                        <li><a href="#" class="filter-option" data-brand="samsung">Samsung</a></li>
+                        <li><a href="#" class="filter-option" data-brand="apple">Apple</a></li>
+                        <li><a href="#" class="filter-option" data-brand="huawei">Huawei</a></li>
+                        <li><a href="#" class="filter-option" data-brand="pexco">Pexco</a></li>
+                        <li><a href="#" class="filter-option" data-brand="lanxue">Lanxue</a></li>
+                        <li><a href="#" class="filter-option" data-brand="gopro">GoPro</a></li>
+                        <li><a href="#" class="filter-option" data-brand="artel">Artel</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Price Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-dollar-sign"></i> Price range</h3>
+                        <button class="filter-clear" id="clearPrice">Clear</button>
+                    </div>
+                    <div class="price-filter">
+                        <div class="price-inputs">
+                            <div class="price-input-group">
+                                <label for="minPrice">Min</label>
+                                <input type="number" id="minPrice" value="0" min="0" max="5000">
+                            </div>
+                            <div class="price-input-group">
+                                <label for="maxPrice">Max</label>
+                                <input type="number" id="maxPrice" value="2000" min="0" max="5000">
+                            </div>
+                        </div>
+                        <div class="price-slider">
+                            <div class="slider-track"></div>
+                            <input type="range" id="priceSliderMin" min="0" max="5000" value="0" class="slider">
+                            <input type="range" id="priceSliderMax" min="0" max="5000" value="2000" class="slider">
+                        </div>
+                        <button class="apply-btn" id="applyPrice">Apply Filter</button>
+                    </div>
+                </div>
+                
+                <!-- Rating Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-star"></i> Ratings</h3>
+                        <button class="filter-clear">Clear</button>
+                    </div>
+                    <div class="rating-filter">
+                        <div class="rating-option active" data-rating="0">
+                            <div class="stars">★★★★★</div>
+                            <span>All Ratings</span>
+                        </div>
+                        <div class="rating-option" data-rating="5">
+                            <div class="stars">★★★★★</div>
+                            <span>5 Stars & Up</span>
+                        </div>
+                        <div class="rating-option" data-rating="4">
+                            <div class="stars">★★★★☆</div>
+                            <span>4 Stars & Up</span>
+                        </div>
+                        <div class="rating-option" data-rating="3">
+                            <div class="stars">★★★☆☆</div>
+                            <span>3 Stars & Up</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Condition Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3><i class="fas fa-certificate"></i> Condition</h3>
+                        <button class="filter-clear">Clear</button>
+                    </div>
+                    <div class="condition-filter">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="condition-checkbox" value="any" checked>
+                            <span class="checkmark"></span>
+                            Any condition
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="condition-checkbox" value="new">
+                            <span class="checkmark"></span>
+                            Brand new
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="condition-checkbox" value="refurbished">
+                            <span class="checkmark"></span>
+                            Refurbished
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="condition-checkbox" value="used">
+                            <span class="checkmark"></span>
+                            Used
+                        </label>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="products-header">
+                    <h2>Featured Products</h2>
+                    <div class="sort-options">
+                        <select id="sortSelect" class="sort-select">
+                            <option value="default">Sort by: Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Customer Rating</option>
+                            <option value="newest">Newest Arrivals</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Products Container -->
+                <div class="products-container" id="productsContainer">
+                    <!-- Products will be loaded dynamically from products.js -->
+                </div>
+                
+                <!-- Loading Indicator -->
+                <div class="loading-indicator" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <p>Loading products...</p>
+                </div>
+                
+                <!-- No Products Message -->
+                <div class="no-products" id="noProductsMessage" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your filters or search term</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2><i class="fas fa-paper-plane"></i> Subscribe to our newsletter</h2>
+                    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </div>
+                    <p class="form-note">By subscribing, you agree to our Privacy Policy</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-icon">B</span>
+                        <span class="logo-text">rand<span class="logo-dot">.</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Best information about the company goes here. We provide high-quality products with excellent customer service.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- About -->
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Find store</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Partnership -->
+                <div class="footer-column">
+                    <h4>Partnership</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Find store</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Information -->
+                <div class="footer-column">
+                    <h4>Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Money Refund</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Shipping</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- For Users -->
+                <div class="footer-column">
+                    <h4>For users</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Login</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Register</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> My Orders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Get App -->
+                <div class="footer-column">
+                    <h4>Get app</h4>
+                    <div class="app-download">
+                        <a href="#" class="app-store-btn">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="play-store-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <span>GET IT ON</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ecommerce. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Initialize cart count from localStorage on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart data from localStorage
+            const savedCart = localStorage.getItem('ecommerce_cart');
+            let cart = [];
+            
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+            } else {
+                // Initialize with default items if localStorage is empty
+                cart = [
+                    {
+                        id: 101,
+                        name: "T-shirts with multiple colors, for men and lady",
+                        price: 40.00,
+                        quantity: 1,
+                        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
+                        details: "Size: medium, Color: blue, Materials: Plastic",
+                        seller: "Artel Market"
+                    },
+                    {
+                        id: 102,
+                        name: "T-shirts with multiple colors, for men and lady",
+                        price: 40.00,
+                        quantity: 1,
+                        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
+                        details: "Size: medium, Color: blue, Materials: Plastic",
+                        seller: "Best factory LLC"
+                    },
+                    {
+                        id: 103,
+                        name: "T-shirts with multiple colors, for men and lady",
+                        price: 40.00,
+                        quantity: 1,
+                        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
+                        details: "Size: medium, Color: blue, Materials: Plastic",
+                        seller: "Artel Market"
+                    }
+                ];
+                localStorage.setItem('ecommerce_cart', JSON.stringify(cart));
+            }
+            
+            // Calculate total items in cart
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            // Update cart count display
+            const cartCountElement = document.getElementById('cartCount');
+            if (cartCountElement) {
+                cartCountElement.textContent = totalItems;
+            }
+            
+            // Update all cart count badges
+            const cartCountBadges = document.querySelectorAll('.cart-count-badge');
+            cartCountBadges.forEach(badge => {
+                badge.textContent = totalItems;
+            });
+            
+            // Initialize price slider
+            if (typeof updatePriceSlider === 'function') {
+                updatePriceSlider();
+            }
+        });
+    </script>
+</body>
+</html>

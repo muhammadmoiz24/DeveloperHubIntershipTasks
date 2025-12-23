@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart | Brand</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>Welcome to our store! Free shipping on orders over $100</div>
+            <div>
+                <select class="language-selector">
+                    <option>English</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">B</span>
+                        <span class="logo-text">rand<span class="logo-dot">.</span></span>
+                    </a>
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for products...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <div class="action-item">
+                            <i class="fas fa-user"></i>
+                            <span class="action-text">Account</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="cartCount" class="cart-count">3</span>
+                            </div>
+                            <span class="action-text">Cart</span>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <nav id="mainNav">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">
+                            Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html" data-category="mobile">Mobile accessory</a>
+                            <a href="index.html" data-category="electronics">Electronics</a>
+                            <a href="index.html" data-category="smartphones">Smartphones</a>
+                            <a href="index.html" data-category="tech">Modern tech</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link">Hot offers</a></li>
+                    <li><a href="#" class="nav-link">Gift boxes</a></li>
+                    <li><a href="#" class="nav-link">Projects</a></li>
+                    <li><a href="#" class="nav-link">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Page Content -->
+    <main class="container">
+        <div class="cart-header">
+            <h1><i class="fas fa-shopping-cart"></i> My Cart <span id="cartTotalItems" class="cart-count-badge">3</span></h1>
+            <a href="index.html" class="back-to-shop">
+                <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
+        </div>
+        
+        <div class="cart-container">
+            <!-- Cart Items Section -->
+            <div class="cart-items-section">
+                <div class="section-header">
+                    <h2>Your Items</h2>
+                    <button class="clear-cart-btn" id="clearCartBtn">
+                        <i class="fas fa-trash"></i> Clear Cart
+                    </button>
+                </div>
+                
+                <div class="cart-items-list" id="cartItemsList">
+                    <!-- Cart items will be loaded dynamically -->
+                </div>
+                
+                <!-- Empty Cart Message -->
+                <div class="empty-cart" id="emptyCartMessage" style="display: none;">
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Your cart is empty</h3>
+                    <p>Looks like you haven't added any items to your cart yet.</p>
+                    <a href="index.html" class="shop-btn">
+                        <i class="fas fa-shopping-bag"></i> Start Shopping
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Order Summary Section -->
+            <div class="order-summary-section">
+                <div class="summary-card">
+                    <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal (<span id="itemCount">3</span> items)</span>
+                            <span id="subtotal">$120.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="free">FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="tax">$10.00</span>
+                        </div>
+                        <div class="summary-row discount-row">
+                            <span>
+                                <i class="fas fa-tag"></i> Discount
+                                <span class="discount-code">SUMMER2023</span>
+                            </span>
+                            <span class="discount-amount">-$20.00</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total</span>
+                            <span id="totalAmount">$110.00</span>
+                        </div>
+                    </div>
+                    
+                    <button class="checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-lock"></i> Proceed to Checkout
+                    </button>
+                    
+                    <div class="payment-methods">
+                        <p>Secure payment with:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefits Card -->
+                <div class="benefits-card">
+                    <h3><i class="fas fa-award"></i> Benefits</h3>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Secure payment</h4>
+                            <p>Your payment information is encrypted and secure.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Customer support</h4>
+                            <p>24/7 customer support available via chat, email, and phone.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Free delivery</h4>
+                            <p>Free delivery on all orders over $100.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Discount Banner -->
+                <div class="discount-banner">
+                    <div class="discount-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="discount-content">
+                        <h4>Super discount on more than $100</h4>
+                        <p>Get an additional 10% off when you spend over $100!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Saved for Later Section -->
+        <div class="saved-items-section">
+            <div class="section-header">
+                <h2><i class="fas fa-heart"></i> Saved for Later</h2>
+                <span class="saved-count">4 items</span>
+            </div>
+            
+            <div class="saved-items-grid" id="savedItemsList">
+                <!-- Saved items will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-icon">B</span>
+                        <span class="logo-text">rand<span class="logo-dot">.</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Best information about the company goes here. We provide high-quality products with excellent customer service.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- About -->
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Find store</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Partnership -->
+                <div class="footer-column">
+                    <h4>Partnership</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Find store</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Information -->
+                <div class="footer-column">
+                    <h4>Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Money Refund</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Shipping</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- For Users -->
+                <div class="footer-column">
+                    <h4>For users</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Login</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Register</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> My Orders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Get App -->
+                <div class="footer-column">
+                    <h4>Get app</h4>
+                    <div class="app-download">
+                        <a href="#" class="app-store-btn">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="play-store-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <span>GET IT ON</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ecommerce. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
